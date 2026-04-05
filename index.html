@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radar Ticino — Guida Sereno, Guida Sicuro</title>
+  <meta name="description" content="L'assistente indispensabile per la sicurezza stradale in Ticino. Basato sui dati ufficiali della Polizia Cantonale.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <style>
+    :root {
+      --primary: #E63946;
+      --secondary: #0033A0;
+      --bg-dark-base: #05050f;
+      --card-bg: rgba(22, 33, 62, 0.7);
+      --text-main: #ffffff;
+      --text-muted: #aab4cc;
+      --accent-green: #2ecc71;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(5, 5, 15, 0.85), rgba(5, 5, 15, 0.85)), 
+                  url('fondo_testurizzato.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .bg-glow {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 51, 160, 0.1) 0%, transparent 40%);
+    }
+
+    .hero {
+      padding: 80px 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .banner-main {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .shield-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .shield-logo img {
+      height: 35px;
+      width: auto;
+    }
+
+    .title-with-shield {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .hero-content .highlight {
+      color: var(--primary);
+    }
+
+    .title-shield-img {
+      height: 60px;
+      width: auto;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-muted);
+      font-size: 14px;
+      cursor: default;
+    }
+
+    .coming-soon-badge {
+      font-size: 10px;
+      background: var(--primary);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 5px;
+    }
+
+    .screenshots-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 30px;
+      border: 6px solid #16213e;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .contact-section {
+      padding: 80px 20px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .form-group { margin-bottom: 20px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-muted); }
+    
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.2s;
+    }
+
+    .btn-submit:hover { opacity: 0.9; }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .success-message {
+      display: none;
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid rgba(46, 204, 113, 0.4);
+      color: #2ecc71;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+
+    .error-message {
+      display: none;
+      background: rgba(230, 57, 70, 0.15);
+      border: 1px solid rgba(230, 57, 70, 0.4);
+      color: #E63946;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--primary); }
+
+    @media (max-width: 968px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .shield-logo { justify-content: center; }
+      .title-with-shield { flex-direction: column; text-align: center; }
+      .cta-group { justify-content: center; }
+      .screenshots-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="shield-logo">
+        <img src="radar_ticino_icon.png" alt="Icona">
+        <span style="font-weight:800; font-size: 24px; letter-spacing: -1px;">Radar Ticino</span>
+      </div>
+      
+      <div class="title-with-shield">
+        <h1><span>Guida senza pensieri,</span> <br><span class="highlight">lo scudo del Ticino.</span></h1>
+        <img src="scudo_ticino.png" alt="Scudo" class="title-shield-img">
+      </div>
+      
+      <p class="tagline">L'assistente intelligente che ti avvisa sui controlli velocità in Canton Ticino, usando solo dati ufficiali e trasparenti.</p>
+      
+      <div class="cta-group">
+        <div class="btn">Google Play Store <span class="coming-soon-badge">A breve</span></div>
+        <div class="btn">App Store <span class="coming-soon-badge">A breve</span></div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="banner.png" alt="Banner" class="banner-main">
+    </div>
+  </section>
+
+  <section class="screenshots-section">
+    <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 10px;">L'App in azione</h2>
+    <div class="screenshots-grid">
+      <div class="screenshot-item">
+        <img src="radarticino_schermata1.png" alt="Home">
+        <p style="margin-top:15px; font-weight:600;">Monitoraggio One-Tap</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="radarticino_schermata2.png" alt="Mappa">
+        <p style="margin-top:15px; font-weight:600;">Mappa delle Zone</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="radarticino_schermata3.png" alt="Avviso">
+        <p style="margin-top:15px; font-weight:600;">Alert in Tempo Reale</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="form-container">
+      <h2 style="text-align:center; margin-bottom: 10px;">Resta aggiornato</h2>
+      <p style="text-align:center; color:var(--text-muted); margin-bottom:30px; font-size:14px;">Lascia i tuoi dati e ti avvisiamo al lancio!</p>
+      
+      <div class="form-group">
+        <label>Nome completo</label>
+        <input type="text" id="nome" class="form-input" placeholder="Il tuo nome" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" class="form-input" placeholder="La tua email" required>
+      </div>
+      <div class="form-group">
+        <label>Dispositivo</label>
+        <div style="display:flex; gap:20px; margin-top:10px;">
+          <label style="color:white; cursor:pointer;"><input type="radio" name="os" value="Android" id="android"> Android</label>
+          <label style="color:white; cursor:pointer;"><input type="radio" name="os" value="Apple" id="apple"> Apple</label>
+        </div>
+      </div>
+
+      <button class="btn-submit" id="submitBtn" onclick="sendEmail()">Avvisami al lancio</button>
+      
+      <div class="success-message" id="successMsg">
+        ✅ Grazie! Ti avviseremo appena Radar Ticino sarà disponibile!
+      </div>
+      <div class="error-message" id="errorMsg">
+        ❌ Errore nell'invio. Riprova o scrivi a radarticino2026@gmail.com
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p style="margin-bottom:10px;">
+      <a href="https://radarticino.github.io/radarticino/privacy-policy.html">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:radarticino2026@gmail.com">Contatti</a>
+    </p>
+    <p>© 2026 Blue Cristal Sagl — Via Angelo Frigerio 5, 6821 Rovio (TI), Svizzera</p>
+  </footer>
+
+  <script>
+    emailjs.init('drd8vEecVyJnBbTXb');
+
+    function sendEmail() {
+      var nome = document.getElementById('nome').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var osSelected = document.querySelector('input[name="os"]:checked');
+      var os = osSelected ? osSelected.value : 'Non specificato';
+
+      if (!nome || !email) {
+        alert('Per favore compila nome e email.');
+        return;
+      }
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Invio in corso...';
+
+      emailjs.send('service_itz4f0l', 'template_ln6wgq1', {
+        from_name: nome,
+        from_email: email,
+        phone: os,
+        message: 'Richiesta di notifica al lancio di Radar Ticino. Dispositivo: ' + os
+      }).then(function() {
+        document.getElementById('successMsg').style.display = 'block';
+        document.getElementById('errorMsg').style.display = 'none';
+        btn.textContent = 'Inviato!';
+        document.getElementById('nome').value = '';
+        document.getElementById('email').value = '';
+        if (osSelected) osSelected.checked = false;
+      }, function(error) {
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('successMsg').style.display = 'none';
+        btn.disabled = false;
+        btn.textContent = 'Avvisami al lancio';
+        console.error('EmailJS error:', error);
+      });
+    }
+  </script>
+
+</body>
+</html>
