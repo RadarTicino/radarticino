@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scarica Radar Ticino</title>
+<meta name="description" content="Scarica Radar Ticino — l'assistente per la sicurezza stradale in Canton Ticino.">
+
+<!-- ===== LINK DEGLI STORE (modificabili qui in un punto solo) ===== -->
+<script>
+  var IOS_URL     = "https://apps.apple.com/ch/app/radar-ticino/id6775140584";
+  var ANDROID_URL = "https://play.google.com/store/apps/details?id=ch.bluecristal.radarticino";
+
+  // Rilevamento sistema operativo
+  (function () {
+    var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+    var isIOS = (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) ||
+                (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPad iOS 13+
+    var isAndroid = /android/i.test(ua);
+
+    if (isIOS) {
+      window.location.replace(IOS_URL);
+    } else if (isAndroid) {
+      window.location.replace(ANDROID_URL);
+    }
+    // Desktop / altro: resta sulla pagina e mostra i due pulsanti
+  })();
+</script>
+
+<style>
+  :root{
+    --rosso:#d5202b;        /* rosso Ticino */
+    --blu:#1b4ea0;          /* blu Ticino */
+    --scuro:#1e293b;
+    --grigio:#64748b;
+    --bg1:#f4f6fb;
+    --bg2:#eaf0fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(160deg,var(--bg1),var(--bg2));
+    color:var(--scuro);
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;padding:24px;
+  }
+  .card{
+    background:#fff;border-radius:24px;
+    box-shadow:0 20px 60px rgba(27,78,160,.14);
+    max-width:420px;width:100%;
+    padding:40px 32px;text-align:center;
+  }
+  .icon{
+    width:104px;height:104px;border-radius:24px;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+    margin:0 auto 22px;display:block;
+  }
+  h1{font-size:1.55rem;line-height:1.2;margin-bottom:8px;}
+  .tag{color:var(--grigio);font-size:1rem;margin-bottom:28px;}
+  .stores{display:flex;flex-direction:column;gap:14px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    text-decoration:none;border-radius:14px;padding:15px 18px;
+    font-size:1.05rem;font-weight:600;color:#fff;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.18);}
+  .btn svg{width:24px;height:24px;flex:none;}
+  .ios{background:#000;}
+  .android{background:linear-gradient(135deg,#1b4ea0,#2563eb);}
+  .btn small{display:block;font-size:.72rem;font-weight:500;opacity:.8;line-height:1;}
+  .btn b{font-size:1.12rem;line-height:1.15;}
+  .redirecting{margin-top:18px;font-size:.85rem;color:var(--grigio);display:none;}
+  .footer{margin-top:26px;font-size:.78rem;color:#94a3b8;}
+  .footer a{color:var(--blu);text-decoration:none;}
+</style>
+</head>
+<body>
+  <main class="card">
+    <img class="icon" src="https://www.radarticino.ch/radar_ticino_icon.png" alt="Radar Ticino">
+    <h1>Scarica Radar Ticino</h1>
+    <p class="tag">Il tuo assistente per la sicurezza stradale</p>
+
+    <div class="stores">
+      <a class="btn ios" id="iosBtn" href="https://apps.apple.com/ch/app/radar-ticino/id6775140584">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M16.365 1.43c0 1.14-.42 2.2-1.12 3.01-.84.97-2.2 1.72-3.4 1.62-.15-1.13.45-2.32 1.1-3.05.78-.86 2.18-1.5 3.31-1.58.04.07.11.4.11 0zM20.5 17.04c-.5 1.16-.74 1.67-1.39 2.7-.9 1.43-2.17 3.21-3.74 3.22-1.4.01-1.76-.91-3.66-.9-1.9.01-2.29.92-3.69.91-1.57-.01-2.77-1.62-3.67-3.05-2.52-4-2.78-8.69-1.23-11.18C4.55 7.08 6.32 6.03 7.98 6.03c1.69 0 2.76.92 4.16.92 1.36 0 2.19-.92 4.15-.92 1.48 0 3.05.81 4.17 2.2-3.66 2.01-3.07 7.24.04 8.81z"/></svg>
+        <span><small>Scarica su</small><b>App Store</b></span>
+      </a>
+      <a class="btn android" id="androidBtn" href="https://play.google.com/store/apps/details?id=ch.bluecristal.radarticino">
+        <svg viewBox="0 0 512 512" fill="#fff"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg>
+        <span><small>Disponibile su</small><b>Google Play</b></span>
+      </a>
+    </div>
+
+    <p class="redirecting" id="redir">Reindirizzamento allo store in corso…</p>
+
+    <p class="footer">
+      Apri questa pagina dal tuo telefono per il download automatico.<br>
+      © 2026 Blue Cristal Sagl · <a href="https://www.radarticino.ch">radarticino.ch</a>
+    </p>
+  </main>
+</body>
+</html>
+                     
