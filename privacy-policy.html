@@ -4,77 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Radar Ticino</title>
+  <link rel="alternate" hreflang="de" href="https://www.radarticino.ch/datenschutz.html">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; line-height: 1.5; }
     h1 { color: #E63946; }
-    h2 { color: #16213e; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+    h2 { color: #16213e; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 32px; }
+    h3 { color: #16213e; margin-top: 22px; }
     table { width: 100%; border-collapse: collapse; margin: 15px 0; }
     th { background: #16213e; color: white; padding: 10px; text-align: left; }
-    td { padding: 10px; border: 1px solid #ddd; }
+    td { padding: 10px; border: 1px solid #ddd; vertical-align: top; }
     tr:nth-child(even) { background: #f5f5f5; }
+    .evidenza { background: #f1f5fb; border-left: 4px solid #16213e; padding: 12px 16px; margin: 15px 0; }
+    .lingua { text-align: right; font-size: 14px; }
     .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px; }
+    .footer a { color: #16213e; }
   </style>
 </head>
 <body>
+  <p class="lingua"><a href="datenschutz.html">Deutsch</a></p>
   <h1>🛡️ Privacy Policy — Radar Ticino</h1>
-  <p><strong>Ultimo aggiornamento: Aprile 2026</strong></p>
+  <p><strong>Ultimo aggiornamento: novembre 2026</strong></p>
 
-  <h2>1. Titolare del Trattamento</h2>
+  <h2>1. Titolare del trattamento</h2>
   <p>
     <strong>Blue Cristal Sagl</strong><br>
     Via Angelo Frigerio 5<br>
     6821 Rovio (TI), Svizzera<br>
+    IDI: CHE-271.611.052<br>
     Email: <a href="mailto:radarticino2026@gmail.com">radarticino2026@gmail.com</a>
   </p>
 
-  <h2>2. Introduzione</h2>
-  <p>Radar Ticino ("l'App") è sviluppata e gestita da Blue Cristal Sagl. La presente Privacy Policy descrive come raccogliamo, utilizziamo e proteggiamo i dati personali degli utenti, in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR) e la Legge federale svizzera sulla protezione dei dati (LPD).</p>
+  <h2>2. Ambito</h2>
+  <p>La presente Privacy Policy descrive come l'applicazione mobile <strong>Radar Ticino</strong> ("l'App") per iOS e Android tratta i dati personali. Vale per tutte le versioni dell'App; quando una funzione esiste solo in alcune versioni, lo indichiamo.</p>
+  <p>Ci atteniamo alla Legge federale svizzera sulla protezione dei dati (LPD, RS 235.1) e, per gli utenti dello Spazio economico europeo, al Regolamento generale sulla protezione dei dati (GDPR).</p>
 
-  <h2>3. Dati Raccolti</h2>
+  <h2>3. Il punto più importante: la tua posizione</h2>
+  <div class="evidenza">
+    <p><strong>La tua posizione non lascia il telefono.</strong> L'App confronta la posizione GPS con le zone di controllo direttamente sul dispositivo. La posizione non viene trasmessa ai nostri server né a terzi, e nessun percorso viene registrato. Anche la velocità mostrata sullo schermo è calcolata sul telefono.</p>
+  </div>
+  <p>Per avvisare anche a schermo spento, l'App chiede il permesso di accedere alla posizione in background. Questo permesso serve solo agli avvisi e si può revocare in qualsiasi momento nelle impostazioni del telefono; senza di esso gli avvisi non funzionano.</p>
 
-  <h3>3.1 Dati di Localizzazione (GPS)</h3>
-  <p>L'App raccoglie la posizione geografica del dispositivo in tempo reale, anche in background quando il monitoraggio è attivo. Questi dati vengono elaborati <strong>esclusivamente sul dispositivo</strong> e non vengono trasmessi né salvati su server esterni. La geolocalizzazione è necessaria per il funzionamento principale dell'App.</p>
+  <h2>4. Quali dati trattiamo</h2>
 
-  <h3>3.2 Dati del Form di Contatto</h3>
-  <p>Quando l'utente compila il form di supporto o la richiesta di consulenza assicurativa, raccogliamo:</p>
+  <h3>4.1 Nessun account</h3>
+  <p>L'App non richiede registrazione, nome o indirizzo email per funzionare. Non esistono account utente.</p>
+
+  <h3>4.2 Abbonamento e prova gratuita</h3>
+  <p>Dalla versione 2.0 l'App ha una versione gratuita, utilizzabile senza alcun acquisto, e una versione Premium in abbonamento, eventualmente con un periodo di prova gratuito offerto dallo store.</p>
+  <p>Acquisti, prove e rinnovi sono gestiti interamente da <strong>Apple App Store</strong> (iOS) e <strong>Google Play</strong> (Android). Non riceviamo dati della carta di credito né altri dati di pagamento. Per conoscere lo stato dell'abbonamento usiamo <strong>RevenueCat</strong>, che assegna al dispositivo un identificativo anonimo e restituisce all'App lo stato (ad esempio attivo, in prova, rinnovo attivo o disattivato, data di scadenza).</p>
+
+  <h3>4.3 Notifica del lunedì (dalla versione 2.0)</h3>
+  <p>Se permetti le notifiche, ogni lunedì mattina l'App ti invia una notifica informativa con le zone di controllo della settimana, uguale per tutti gli utenti. Per poterla inviare, l'App registra nel nostro database (Google Firebase Firestore):</p>
   <ul>
-    <li>Nome</li>
-    <li>Indirizzo email</li>
-    <li>Numero di telefono</li>
-    <li>Testo del messaggio</li>
+    <li>l'identificativo tecnico per le notifiche (token push) del dispositivo;</li>
+    <li>la lingua dell'App, la piattaforma (iOS o Android) e la versione dell'App;</li>
+    <li>se la notifica è attiva o disattivata e la data dell'ultimo aggiornamento.</li>
   </ul>
-  <p>Questi dati vengono trasmessi tramite il servizio EmailJS e utilizzati esclusivamente per rispondere alla richiesta dell'utente.</p>
+  <p>Non vengono registrati né nome, né email, né la posizione. L'invio passa dal servizio di notifiche di <strong>Expo</strong> e dai servizi di notifica di Google (Firebase Cloud Messaging) e Apple (Apple Push Notification service). Puoi disattivare la notifica in qualsiasi momento in App → Altro oppure nelle impostazioni del telefono.</p>
+  <p>Gli avvisi di ingresso nelle zone sono invece generati <strong>localmente sul telefono</strong> e non passano da alcun server.</p>
 
-  <h3>3.3 Dati di Pagamento</h3>
-  <p>I pagamenti per l'abbonamento sono gestiti interamente da <strong>Google Play</strong> (per Android) e <strong>Apple App Store</strong> (per iOS). Blue Cristal Sagl non ha accesso ai dati della carta di credito o agli altri dati di pagamento dell'utente.</p>
+  <h3>4.4 Zone di controllo</h3>
+  <p>Le zone vengono scaricate da Google Firebase (Firestore). Durante il collegamento il fornitore tratta dati tecnici come l'indirizzo IP. Non leggiamo questi dati e non li colleghiamo ad altre informazioni.</p>
 
-  <h3>3.4 Dati Tecnici</h3>
-  <p>Firebase (Google) raccoglie dati tecnici anonimi per il funzionamento del database dell'App. Non vengono raccolti dati personali identificativi tramite Firebase.</p>
+  <h3>4.5 Mappa</h3>
+  <p>Dalla versione 2.0 lo sfondo della mappa (le "tessere" della cartina) viene caricato da <strong>Stadia Maps</strong>, tramite server situati in Europa; le versioni precedenti, e l'App 2.0 solo come riserva in caso di problemi, lo caricano da <strong>OpenStreetMap</strong>. A questi fornitori arrivano l'indirizzo IP e la richiesta della porzione di mappa visualizzata. La tua posizione GPS non viene inviata.</p>
 
-  <h2>4. Finalità del Trattamento</h2>
-  <p>I dati raccolti vengono utilizzati esclusivamente per:</p>
+  <h3>4.6 Moduli di contatto</h3>
+  <p>Nel modulo di supporto ("Scrivici") puoi inviarci volontariamente nome, indirizzo email, numero di telefono e un messaggio. Questi dati ci vengono recapitati come email tramite il servizio <strong>EmailJS</strong> e sono usati esclusivamente per rispondere alla tua richiesta.</p>
+  <p>Nella versione 1.x dell'App era presente anche il modulo "Offerte &amp; Promozioni". Le richieste inviate con questo modulo arrivano a Blue Cristal Sagl, servono solo a rispondere e non vengono inoltrate a terzi. Dalla versione 2.0 il modulo non esiste più.</p>
+
+  <h3>4.7 Valutazione dell'App</h3>
+  <p>Dalla versione 2.0 l'App può proporre, raramente e mai durante la guida, la finestra di valutazione dello store, e la voce "Valuta l'app" apre la pagina dello store. La valutazione è gestita da Apple o da Google secondo le loro condizioni; noi non riceviamo dati oltre alla recensione eventualmente pubblicata.</p>
+
+  <h3>4.8 Dati salvati solo sul telefono</h3>
+  <p>L'App salva sul dispositivo alcune informazioni tecniche: le impostazioni scelte (lingua, suono di uscita, notifica del lunedì), se un invito è già stato mostrato, la data della prima apertura, la data e l'ora dell'ultimo avviso e il numero di richieste di valutazione già fatte (per non proporla durante la guida), l'ultima configurazione valida della mappa, l'ultimo stato noto dell'abbonamento e lo sblocco per i revisori degli store. Questi dati restano sul telefono e vengono cancellati disinstallando l'App.</p>
+
+  <h2>5. Cosa non facciamo</h2>
   <ul>
-    <li>Fornire il servizio di avviso di prossimità alle zone monitorate</li>
-    <li>Rispondere alle richieste di supporto degli utenti</li>
-    <li>Gestire le richieste di consulenza assicurativa (con consenso esplicito)</li>
+    <li>Nessuna pubblicità e nessun tracciamento pubblicitario nell'App.</li>
+    <li>Nessuno strumento di analisi o di profilazione del comportamento.</li>
+    <li>Nessuna vendita o cessione di dati a scopo pubblicitario.</li>
+    <li>Nessuna registrazione dei tuoi percorsi o dei luoghi in cui ti trovi.</li>
   </ul>
 
-  <h2>5. Base Giuridica</h2>
-  <p>Il trattamento dei dati si basa su:</p>
+  <h2>6. Finalità e basi giuridiche</h2>
   <ul>
-    <li><strong>Esecuzione del contratto</strong> — per la geolocalizzazione necessaria al funzionamento dell'App</li>
-    <li><strong>Consenso esplicito</strong> — per i dati forniti tramite i form di contatto</li>
-    <li><strong>Legittimo interesse</strong> — per il corretto funzionamento tecnico dell'App</li>
+    <li><strong>Avvisi e funzionamento dell'App</strong> — esecuzione del contratto.</li>
+    <li><strong>Gestione dell'abbonamento e della prova</strong> — esecuzione del contratto.</li>
+    <li><strong>Notifica del lunedì</strong> — tuo consenso, dato con il permesso alle notifiche e revocabile in qualsiasi momento.</li>
+    <li><strong>Risposta alle richieste di supporto</strong> — esecuzione del contratto o legittimo interesse.</li>
+    <li><strong>Sicurezza e prevenzione degli abusi</strong> — legittimo interesse.</li>
   </ul>
 
-  <h2>6. Conservazione dei Dati</h2>
+  <h2>7. Conservazione</h2>
   <ul>
-    <li><strong>Dati GPS</strong> — non vengono conservati, elaborati solo in tempo reale sul dispositivo</li>
-    <li><strong>Dati form di contatto</strong> — conservati per il tempo necessario a gestire la richiesta, massimo 12 mesi</li>
-    <li><strong>Dati Firebase</strong> — le zone monitorate non contengono dati personali</li>
+    <li><strong>Posizione GPS</strong> — non viene conservata: esiste solo per il tempo del confronto sul telefono.</li>
+    <li><strong>Token push</strong> — resta registrato finché il dispositivo lo usa; quando non è più valido (ad esempio dopo la disinstallazione dell'App) viene cancellato automaticamente.</li>
+    <li><strong>Dati dei moduli di contatto</strong> — al massimo 12 mesi dalla chiusura della richiesta, salvo obblighi di legge più lunghi.</li>
+    <li><strong>Zone di controllo</strong> — non contengono dati personali.</li>
   </ul>
 
-  <h2>7. Condivisione con Terze Parti</h2>
+  <h2>8. Servizi di terzi</h2>
   <table>
     <tr>
       <th>Servizio</th>
@@ -82,49 +112,57 @@
       <th>Finalità</th>
     </tr>
     <tr>
-      <td>Firebase Authentication & Firestore</td>
-      <td>Google LLC</td>
-      <td>Database zone monitorate e autenticazione admin</td>
+      <td>Firebase Firestore</td>
+      <td>Google</td>
+      <td>Zone di controllo, configurazione della mappa, token per la notifica del lunedì</td>
     </tr>
     <tr>
-      <td>EmailJS</td>
-      <td>EmailJS Ltd</td>
-      <td>Invio email di supporto</td>
+      <td>RevenueCat</td>
+      <td>RevenueCat Inc. (USA)</td>
+      <td>Stato dell'abbonamento e della prova</td>
+    </tr>
+    <tr>
+      <td>Expo Push, Firebase Cloud Messaging, Apple Push Notification service</td>
+      <td>Expo (USA), Google, Apple</td>
+      <td>Invio della notifica del lunedì</td>
+    </tr>
+    <tr>
+      <td>Stadia Maps</td>
+      <td>Stadia Maps (server in Europa)</td>
+      <td>Sfondo della mappa (dalla versione 2.0)</td>
     </tr>
     <tr>
       <td>OpenStreetMap</td>
       <td>OpenStreetMap Foundation</td>
-      <td>Visualizzazione mappa</td>
+      <td>Sfondo della mappa (versioni 1.x e riserva)</td>
     </tr>
     <tr>
-      <td>Google Play</td>
-      <td>Google LLC</td>
-      <td>Gestione abbonamenti e pagamenti</td>
+      <td>EmailJS</td>
+      <td>EmailJS</td>
+      <td>Recapito dei messaggi dei moduli di contatto</td>
+    </tr>
+    <tr>
+      <td>Apple App Store, Google Play</td>
+      <td>Apple, Google</td>
+      <td>Distribuzione dell'App, pagamenti, valutazioni</td>
     </tr>
   </table>
-  <p>Nessun dato viene venduto a terze parti.</p>
+  <p>Alcuni di questi fornitori trattano dati anche fuori dalla Svizzera e dallo Spazio economico europeo, in particolare negli Stati Uniti. Il trasferimento avviene sulla base di garanzie riconosciute, come le clausole contrattuali standard. Nessun dato viene venduto a terzi.</p>
 
-  <h2>8. Diritti dell'Utente</h2>
-  <p>In conformità con il GDPR e la LPD, l'utente ha il diritto di:</p>
-  <ul>
-    <li><strong>Accesso</strong> — richiedere copia dei propri dati personali</li>
-    <li><strong>Rettifica</strong> — correggere dati inesatti</li>
-    <li><strong>Cancellazione</strong> — richiedere la cancellazione dei propri dati</li>
-    <li><strong>Opposizione</strong> — opporsi al trattamento dei dati</li>
-    <li><strong>Portabilità</strong> — ricevere i propri dati in formato strutturato</li>
-  </ul>
-  <p>Per esercitare questi diritti: <a href="mailto:radarticino2026@gmail.com">radarticino2026@gmail.com</a></p>
+  <h2>9. I tuoi diritti</h2>
+  <p>Hai diritto di accesso, rettifica, cancellazione e consegna dei tuoi dati, di opporti a un trattamento e di revocare in qualsiasi momento un consenso dato. Basta una richiesta a <a href="mailto:radarticino2026@gmail.com">radarticino2026@gmail.com</a>.</p>
+  <p>Se non sei soddisfatto della nostra risposta puoi rivolgerti all'Incaricato federale della protezione dei dati e della trasparenza (IFPDT); gli utenti dello Spazio economico europeo all'autorità di protezione dei dati competente.</p>
 
-  <h2>9. Sicurezza dei Dati</h2>
-  <p>Blue Cristal Sagl adotta misure tecniche e organizzative adeguate per proteggere i dati personali da accessi non autorizzati, perdita o divulgazione.</p>
+  <h2>10. Sicurezza</h2>
+  <p>Adottiamo misure tecniche e organizzative adeguate per proteggere i dati trattati. Le trasmissioni avvengono in forma cifrata. Una protezione assoluta delle trasmissioni via Internet non può tuttavia mai essere garantita.</p>
 
-  <h2>10. Minori</h2>
-  <p>L'App non è destinata a minori di 16 anni. Non raccogliamo consapevolmente dati personali di minori.</p>
+  <h2>11. Minori</h2>
+  <p>L'App si rivolge a chi è abilitato a condurre un veicolo e non è destinata a minori di 16 anni. Non raccogliamo consapevolmente dati di minori.</p>
 
-  <h2>11. Modifiche alla Privacy Policy</h2>
-  <p>Blue Cristal Sagl si riserva il diritto di modificare la presente Privacy Policy. Le modifiche saranno comunicate tramite aggiornamento dell'App. L'uso continuato dell'App dopo le modifiche costituisce accettazione della nuova Privacy Policy.</p>
+  <h2>12. Modifiche</h2>
+  <p>Possiamo aggiornare questa Privacy Policy, ad esempio quando cambiano le funzioni dell'App o i servizi utilizzati. Fa fede la versione pubblicata su questa pagina, con la data di aggiornamento indicata in alto.</p>
 
-  <h2>12. Contatti</h2>
+  <h2>13. Contatti</h2>
   <p>
     <strong>Blue Cristal Sagl</strong><br>
     Via Angelo Frigerio 5<br>
@@ -133,6 +171,7 @@
   </p>
 
   <div class="footer">
+    <p><a href="index.html">Home</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="nota-legale.html">Nota Legale</a> · <a href="terms-of-use.html">Termini d'Uso</a> · <a href="datenschutz.html">Deutsch</a></p>
     <p>© 2026 Blue Cristal Sagl — Tutti i diritti riservati</p>
   </div>
 </body>
