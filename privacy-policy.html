@@ -61,6 +61,7 @@
     <li>se la notifica è attiva o disattivata e la data dell'ultimo aggiornamento.</li>
   </ul>
   <p>Non vengono registrati né nome, né email, né la posizione. L'invio passa dal servizio di notifiche di <strong>Expo</strong> e dai servizi di notifica di Google (Firebase Cloud Messaging) e Apple (Apple Push Notification service). Puoi disattivare la notifica in qualsiasi momento in App → Altro oppure nelle impostazioni del telefono.</p>
+  <p><strong>Avvisi straordinari.</strong> Con lo stesso token e alle stesse condizioni possiamo inviare, raramente, un avviso straordinario sulla sicurezza stradale (ad esempio la chiusura completa dell'autostrada o maltempo grave). Gli avvisi straordinari non contengono mai promozioni e si disattivano insieme alla notifica del lunedì. Gli ultimi avvisi ricevuti restano salvati solo sul telefono, nella schermata Comunicazioni.</p>
   <p>Gli avvisi di ingresso nelle zone sono invece generati <strong>localmente sul telefono</strong> e non passano da alcun server.</p>
 
   <h3>4.4 Zone di controllo</h3>
@@ -77,7 +78,7 @@
   <p>Dalla versione 2.0 l'App può proporre, raramente e mai durante la guida, la finestra di valutazione dello store, e la voce "Valuta l'app" apre la pagina dello store. La valutazione è gestita da Apple o da Google secondo le loro condizioni; noi non riceviamo dati oltre alla recensione eventualmente pubblicata.</p>
 
   <h3>4.8 Dati salvati solo sul telefono</h3>
-  <p>L'App salva sul dispositivo alcune informazioni tecniche: le impostazioni scelte (lingua, suono di uscita, notifica del lunedì), se un invito è già stato mostrato, la data della prima apertura, la data e l'ora dell'ultimo avviso e il numero di richieste di valutazione già fatte (per non proporla durante la guida), l'ultima configurazione valida della mappa, l'ultimo stato noto dell'abbonamento e lo sblocco per i revisori degli store. Questi dati restano sul telefono e vengono cancellati disinstallando l'App.</p>
+  <p>L'App salva sul dispositivo alcune informazioni tecniche: le impostazioni scelte (lingua, suono di uscita, notifica del lunedì), gli ultimi avvisi straordinari ricevuti, se un invito è già stato mostrato, la data della prima apertura, la data e l'ora dell'ultimo avviso e il numero di richieste di valutazione già fatte (per non proporla durante la guida), l'ultima configurazione valida della mappa, l'ultimo stato noto dell'abbonamento e lo sblocco per i revisori degli store. Questi dati restano sul telefono e vengono cancellati disinstallando l'App.</p>
 
   <h2>5. Cosa non facciamo</h2>
   <ul>
@@ -91,7 +92,7 @@
   <ul>
     <li><strong>Avvisi e funzionamento dell'App</strong> — esecuzione del contratto.</li>
     <li><strong>Gestione dell'abbonamento e della prova</strong> — esecuzione del contratto.</li>
-    <li><strong>Notifica del lunedì</strong> — tuo consenso, dato con il permesso alle notifiche e revocabile in qualsiasi momento.</li>
+    <li><strong>Notifica del lunedì e avvisi straordinari</strong> — tuo consenso, dato con il permesso alle notifiche e revocabile in qualsiasi momento.</li>
     <li><strong>Risposta alle richieste di supporto</strong> — esecuzione del contratto o legittimo interesse.</li>
     <li><strong>Sicurezza e prevenzione degli abusi</strong> — legittimo interesse.</li>
   </ul>
@@ -114,7 +115,7 @@
     <tr>
       <td>Firebase Firestore</td>
       <td>Google</td>
-      <td>Zone di controllo, configurazione della mappa, token per la notifica del lunedì</td>
+      <td>Zone di controllo, configurazione della mappa, token per la notifica del lunedì e gli avvisi straordinari</td>
     </tr>
     <tr>
       <td>RevenueCat</td>
@@ -124,7 +125,7 @@
     <tr>
       <td>Expo Push, Firebase Cloud Messaging, Apple Push Notification service</td>
       <td>Expo (USA), Google, Apple</td>
-      <td>Invio della notifica del lunedì</td>
+      <td>Invio della notifica del lunedì e degli avvisi straordinari</td>
     </tr>
     <tr>
       <td>Stadia Maps</td>

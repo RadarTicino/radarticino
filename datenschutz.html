@@ -61,6 +61,7 @@
     <li>ob die Benachrichtigung ein- oder ausgeschaltet ist, und das Datum der letzten Aktualisierung.</li>
   </ul>
   <p>Gespeichert werden weder Name noch E-Mail-Adresse noch Standort. Der Versand läuft über den Benachrichtigungsdienst von <strong>Expo</strong> und über die Benachrichtigungsdienste von Google (Firebase Cloud Messaging) und Apple (Apple Push Notification service). Du kannst die Benachrichtigung jederzeit in der App unter «Mehr» oder in den Einstellungen des Telefons ausschalten.</p>
+  <p><strong>Ausserordentliche Hinweise.</strong> Mit demselben Token und unter denselben Bedingungen können wir selten einen ausserordentlichen Hinweis zur Verkehrssicherheit senden (zum Beispiel bei einer Vollsperrung der Autobahn oder bei schwerem Unwetter). Ausserordentliche Hinweise enthalten nie Werbung und werden zusammen mit der Benachrichtigung am Montag ausgeschaltet. Die zuletzt erhaltenen Hinweise bleiben nur auf dem Telefon gespeichert, im Bildschirm «Mitteilungen».</p>
   <p>Die Warnungen beim Einfahren in eine Zone werden dagegen <strong>lokal auf dem Telefon</strong> erzeugt und laufen über keinen Server.</p>
 
   <h3>4.4 Kontrollzonen</h3>
@@ -77,7 +78,7 @@
   <p>Ab Version 2.0 kann die App selten, und nie während der Fahrt, das Bewertungsfenster des Stores anzeigen; der Eintrag «App bewerten» öffnet die Seite im Store. Die Bewertung wird von Apple bzw. Google nach deren Bedingungen abgewickelt; wir erhalten keine Daten ausser einer allenfalls veröffentlichten Bewertung.</p>
 
   <h3>4.8 Daten, die nur auf dem Telefon gespeichert werden</h3>
-  <p>Die App speichert auf dem Gerät einige technische Angaben: die gewählten Einstellungen (Sprache, Ton beim Verlassen der Zone, Benachrichtigung am Montag), ob ein Hinweis bereits angezeigt wurde, das Datum der ersten Nutzung, Datum und Uhrzeit der letzten Warnung und die Anzahl bereits gezeigter Bewertungsanfragen (damit keine Anfrage während der Fahrt erscheint), die letzte gültige Kartenkonfiguration, den zuletzt bekannten Abo-Status und die Freischaltung für die Prüfstellen der Stores. Diese Daten bleiben auf dem Telefon und werden beim Entfernen der App gelöscht.</p>
+  <p>Die App speichert auf dem Gerät einige technische Angaben: die gewählten Einstellungen (Sprache, Ton beim Verlassen der Zone, Benachrichtigung am Montag), die zuletzt erhaltenen ausserordentlichen Hinweise, ob ein Hinweis bereits angezeigt wurde, das Datum der ersten Nutzung, Datum und Uhrzeit der letzten Warnung und die Anzahl bereits gezeigter Bewertungsanfragen (damit keine Anfrage während der Fahrt erscheint), die letzte gültige Kartenkonfiguration, den zuletzt bekannten Abo-Status und die Freischaltung für die Prüfstellen der Stores. Diese Daten bleiben auf dem Telefon und werden beim Entfernen der App gelöscht.</p>
 
   <h2>5. Was wir nicht tun</h2>
   <ul>
@@ -91,7 +92,7 @@
   <ul>
     <li><strong>Warnungen und Betrieb der App</strong> — Erfüllung des Vertrags.</li>
     <li><strong>Abwicklung von Abo und Gratis-Test</strong> — Erfüllung des Vertrags.</li>
-    <li><strong>Benachrichtigung am Montag</strong> — deine Einwilligung, die du mit der Erlaubnis für Benachrichtigungen erteilst und jederzeit widerrufen kannst.</li>
+    <li><strong>Benachrichtigung am Montag und ausserordentliche Hinweise</strong> — deine Einwilligung, die du mit der Erlaubnis für Benachrichtigungen erteilst und jederzeit widerrufen kannst.</li>
     <li><strong>Beantwortung von Support-Anfragen</strong> — Erfüllung des Vertrags bzw. berechtigtes Interesse.</li>
     <li><strong>Sicherheit und Missbrauchsverhinderung</strong> — berechtigtes Interesse.</li>
   </ul>
@@ -114,7 +115,7 @@
     <tr>
       <td>Firebase Firestore</td>
       <td>Google</td>
-      <td>Kontrollzonen, Kartenkonfiguration, Token für die Benachrichtigung am Montag</td>
+      <td>Kontrollzonen, Kartenkonfiguration, Token für die Benachrichtigung am Montag und die ausserordentlichen Hinweise</td>
     </tr>
     <tr>
       <td>RevenueCat</td>
@@ -124,7 +125,7 @@
     <tr>
       <td>Expo Push, Firebase Cloud Messaging, Apple Push Notification service</td>
       <td>Expo (USA), Google, Apple</td>
-      <td>Versand der Benachrichtigung am Montag</td>
+      <td>Versand der Benachrichtigung am Montag und der ausserordentlichen Hinweise</td>
     </tr>
     <tr>
       <td>Stadia Maps</td>
