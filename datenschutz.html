@@ -52,6 +52,7 @@
   <h3>4.2 Abo und Gratis-Test</h3>
   <p>Ab Version 2.0 gibt es eine Gratisversion, die ohne Kauf genutzt werden kann, und eine Premium-Version im Abo, allenfalls mit einem Gratis-Test, den der Store anbietet.</p>
   <p>Käufe, Tests und Verlängerungen laufen vollständig über den <strong>Apple App Store</strong> (iOS) bzw. <strong>Google Play</strong> (Android). Wir erhalten keine Kreditkarten- oder anderen Zahlungsdaten. Für den Abo-Status setzen wir <strong>RevenueCat</strong> ein; der Dienst ordnet dem Gerät eine anonyme Kennung zu und meldet der App den Status zurück (zum Beispiel aktiv, im Test, Verlängerung ein oder aus, Ablaufdatum).</p>
+  <p><strong>Verkäufer-Code.</strong> Wenn du den Code einer Verkäuferin oder eines Verkäufers von Radar Ticino verwendest (ab Version 2.0, vorerst auf Android), werden der Code, seine Herkunft (Link der Verkäuferin oder des Verkäufers oder Eingabe von Hand) und das Datum bei RevenueCat mit der anonymen Kennung des Abos verknüpft. Diese Angaben dienen nur dazu, das vermittelte Abo zu erkennen und die Provision auf den Zahlungen zu berechnen. Die Verkäuferin oder der Verkäufer erhält keine Daten, die dich identifizieren, sondern nur die Anzahl der Abos und den Betrag der Provision. Hast du die App über den Link einer Verkäuferin oder eines Verkäufers heruntergeladen, liest die App beim ersten Öffnen einmalig den im Link enthaltenen Code aus dem Play Store. Ob ein Code existiert und aktiv ist, prüft die App in unserer Datenbank (Google Firebase Firestore), ohne etwas zu speichern.</p>
 
   <h3>4.3 Benachrichtigung am Montag (ab Version 2.0)</h3>
   <p>Wenn du Benachrichtigungen erlaubst, schickt dir die App jeden Montagmorgen eine informative Benachrichtigung mit den Kontrollzonen der Woche, für alle Nutzerinnen und Nutzer gleich. Damit sie versendet werden kann, speichert die App in unserer Datenbank (Google Firebase Firestore):</p>
@@ -78,7 +79,7 @@
   <p>Ab Version 2.0 kann die App selten, und nie während der Fahrt, das Bewertungsfenster des Stores anzeigen; der Eintrag «App bewerten» öffnet die Seite im Store. Die Bewertung wird von Apple bzw. Google nach deren Bedingungen abgewickelt; wir erhalten keine Daten ausser einer allenfalls veröffentlichten Bewertung.</p>
 
   <h3>4.8 Daten, die nur auf dem Telefon gespeichert werden</h3>
-  <p>Die App speichert auf dem Gerät einige technische Angaben: die gewählten Einstellungen (Sprache, Ton beim Verlassen der Zone, Benachrichtigung am Montag), die zuletzt erhaltenen ausserordentlichen Hinweise, ob ein Hinweis bereits angezeigt wurde, das Datum der ersten Nutzung, Datum und Uhrzeit der letzten Warnung und die Anzahl bereits gezeigter Bewertungsanfragen (damit keine Anfrage während der Fahrt erscheint), die letzte gültige Kartenkonfiguration, den zuletzt bekannten Abo-Status und die Freischaltung für die Prüfstellen der Stores. Diese Daten bleiben auf dem Telefon und werden beim Entfernen der App gelöscht.</p>
+  <p>Die App speichert auf dem Gerät einige technische Angaben: die gewählten Einstellungen (Sprache, Ton beim Verlassen der Zone, Benachrichtigung am Montag), die zuletzt erhaltenen ausserordentlichen Hinweise, ob ein Hinweis bereits angezeigt wurde, das Datum der ersten Nutzung, Datum und Uhrzeit der letzten Warnung und die Anzahl bereits gezeigter Bewertungsanfragen (damit keine Anfrage während der Fahrt erscheint), die letzte gültige Kartenkonfiguration, den zuletzt bekannten Abo-Status, den allenfalls verwendeten Verkäufer-Code und die Freischaltung für die Prüfstellen der Stores. Diese Daten bleiben auf dem Telefon und werden beim Entfernen der App gelöscht.</p>
 
   <h2>5. Was wir nicht tun</h2>
   <ul>
@@ -92,6 +93,7 @@
   <ul>
     <li><strong>Warnungen und Betrieb der App</strong> — Erfüllung des Vertrags.</li>
     <li><strong>Abwicklung von Abo und Gratis-Test</strong> — Erfüllung des Vertrags.</li>
+    <li><strong>Verkäufer-Code und Berechnung der Provisionen</strong> — Erfüllung des Vertrags (Vorteil des Codes) und berechtigtes Interesse (Bezahlung der Verkäuferinnen und Verkäufer).</li>
     <li><strong>Benachrichtigung am Montag und ausserordentliche Hinweise</strong> — deine Einwilligung, die du mit der Erlaubnis für Benachrichtigungen erteilst und jederzeit widerrufen kannst.</li>
     <li><strong>Beantwortung von Support-Anfragen</strong> — Erfüllung des Vertrags bzw. berechtigtes Interesse.</li>
     <li><strong>Sicherheit und Missbrauchsverhinderung</strong> — berechtigtes Interesse.</li>
@@ -102,6 +104,7 @@
     <li><strong>GPS-Position</strong> — wird nicht aufbewahrt: sie besteht nur für den Moment des Vergleichs auf dem Telefon.</li>
     <li><strong>Push-Token</strong> — bleibt gespeichert, solange das Gerät ihn verwendet; ist er nicht mehr gültig (zum Beispiel nach dem Entfernen der App), wird er automatisch gelöscht.</li>
     <li><strong>Angaben aus den Kontaktformularen</strong> — höchstens zwölf Monate nach Abschluss der Anfrage, sofern keine längere gesetzliche Aufbewahrungspflicht gilt.</li>
+    <li><strong>Verkäufer-Code</strong> — bleibt mit dem Abo verknüpft; die Angaben zur Berechnung der Provisionen werden so lange aufbewahrt, wie es die Buchführungspflichten verlangen.</li>
     <li><strong>Kontrollzonen</strong> — enthalten keine Personendaten.</li>
   </ul>
 
@@ -115,12 +118,12 @@
     <tr>
       <td>Firebase Firestore</td>
       <td>Google</td>
-      <td>Kontrollzonen, Kartenkonfiguration, Token für die Benachrichtigung am Montag und die ausserordentlichen Hinweise</td>
+      <td>Kontrollzonen, Kartenkonfiguration, Token für die Benachrichtigung am Montag und die ausserordentlichen Hinweise, Prüfung der Verkäufer-Codes</td>
     </tr>
     <tr>
       <td>RevenueCat</td>
       <td>RevenueCat Inc. (USA)</td>
-      <td>Status von Abo und Gratis-Test</td>
+      <td>Status von Abo und Gratis-Test, Verkäufer-Code</td>
     </tr>
     <tr>
       <td>Expo Push, Firebase Cloud Messaging, Apple Push Notification service</td>
