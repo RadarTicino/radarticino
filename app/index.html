@@ -11,9 +11,10 @@
   var IOS_URL     = "https://apps.apple.com/ch/app/radar-ticino/id6775140584";
   var ANDROID_URL = "https://play.google.com/store/apps/details?id=ch.bluecristal.radarticino";
 
-  // Rete di venditori: su iPhone il codice si usa solo dalla 2.0 iOS (12i).
-  // Fino ad allora false: con un codice la pagina resta aperta e lo spiega.
-  var CODICE_IOS_ATTIVO = false;
+  // Rete di venditori: su iPhone il codice si usa dalla 2.0 iOS (12i, attivo dal 24.11.2026).
+  // Con un codice la pagina resta aperta, mostra il codice e spiega di inserirlo nell'app.
+  // false = torna al testo "prossimo aggiornamento" (interruttore di emergenza).
+  var CODICE_IOS_ATTIVO = true;
 
   // Codice venditore dal link (?v=LUCA7): 3-10 lettere maiuscole o cifre
   var CODICE = (function () {
@@ -147,16 +148,16 @@
       footer: "\u00d6ffne diese Seite auf dem Handy f\u00fcr den automatischen Download.",
       etichetta: "Dein Code",
       vantaggio: "2 Wochen gratis statt 7 Tage",
-      desktop: "\u00d6ffne diesen Link auf dem Handy: Auf Android wird der Code automatisch \u00fcbernommen. Du kannst ihn auch in der App unter \u00abHast du einen Code?\u00bb eingeben.",
-      iosAttivo: "Lade die App herunter, tippe auf \u00abHast du einen Code?\u00bb und gib den Code ein.",
+      desktop: "\u00d6ffne diesen Link auf dem Handy: Auf Android wird der Code automatisch \u00fcbernommen. Auf dem iPhone (oder wenn du willst auch auf Android) gibst du ihn in der App unter \u00abHast du einen Code?\u00bb ein.",
+      iosAttivo: "Kopiere den Code, lade die App herunter und tippe auf \u00abHast du einen Code?\u00bb: Der Code muss in der App eingegeben werden.",
       iosNonAttivo: "Auf dem iPhone kannst du den Code mit dem n\u00e4chsten Update von Radar Ticino verwenden. Bewahre ihn auf.",
       copia: "Kopieren", copiato: "Kopiert"
     } : {
       titolo: null, tag: null, footer: null,
       etichetta: "Il tuo codice",
       vantaggio: "2 settimane gratis invece di 7 giorni",
-      desktop: "Apri questo link dal telefono: su Android il codice si applica da solo. Puoi anche inserirlo nell'app alla voce \u00abHai un codice?\u00bb.",
-      iosAttivo: "Scarica l'app, poi tocca \u00abHai un codice?\u00bb e inserisci il codice.",
+      desktop: "Apri questo link dal telefono: su Android il codice si applica da solo. Su iPhone (o se preferisci anche su Android) inseriscilo nell'app alla voce \u00abHai un codice?\u00bb.",
+      iosAttivo: "Copia il codice, scarica l'app e tocca \u00abHai un codice?\u00bb: il codice va inserito nell'app.",
       iosNonAttivo: "Su iPhone il codice si potr\u00e0 usare con il prossimo aggiornamento di Radar Ticino. Tienilo da parte.",
       copia: "Copia", copiato: "Copiato"
     };
@@ -181,6 +182,12 @@
       } catch (e) {}
     };
     document.getElementById("codiceBox").style.display = "block";
+    // iPhone con codice attivo: solo il pulsante App Store, senza la riga per il computer
+    if (isIOS && CODICE_IOS_ATTIVO) {
+      if (a) a.style.display = "none";
+      var f = document.getElementById("footerTesto");
+      if (f) f.style.display = "none";
+    }
   })();
   </script>
 </body>
